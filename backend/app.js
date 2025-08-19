@@ -3,7 +3,7 @@ import cors from "cors";
 import puppeteer from "puppeteer";
 
 const app = express();
-app.use(cors());
+app.use(cors({ origin: process.env.FRONTEND_URL, credentials: true }));
 
 app.get("/api/scrape", async (req, res) => {
   try {
@@ -17,8 +17,8 @@ app.get("/api/scrape", async (req, res) => {
     
     const quotes = await page.evaluate(() => {
       const data = [];
-      const obj = document.querySelectorAll(".quote");
-      console.log(obj);
+      // const obj = document.querySelectorAll(".quote");
+      // console.log(obj);
 
       document.querySelectorAll(".quote").forEach((quote) => {
         data.push({
