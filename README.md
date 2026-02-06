@@ -47,8 +47,6 @@ cd ../frontend && npm install
 cd ../backend && npm run dev
 cd ../frontend && npm run dev
 
-# 5️⃣ Visit the app at:
-http://localhost:5173
 ```
 ## API Endpoints
 
